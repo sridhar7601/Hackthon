@@ -1,0 +1,64 @@
+<!DOCTYPE html> <
+<html>
+  <head>
+    <title>Report</title>
+  </head>
+  <body>
+    <br />
+    <br />
+    <form>
+      <!--<label> Firstname </label>
+      <input type="text" name="firstname" size="15" /> <br />
+      <br />
+      <label> Middlename: </label>
+      <input type="text" name="middlename" size="15" /> <br />
+      <br />
+      <label> Lastname: </label>
+      <input type="text" name="lastname" size="15" /> <br />
+      <br /> -->
+
+      <label> Report type : </label>
+      <select>
+        <option value="with bin">Area With Bins</option>
+        <option value="no bin">Large Area</option>
+      </select>
+
+      <br />
+      <br />
+      <br />
+
+      Address
+      <br />
+      <textarea cols="80" rows="5" value="address"> </textarea>
+      <br />
+      <br />
+      <label for="img">Select image:</label>
+      <input type="file" id="img" name="img" accept="image/*" />
+      <input type="button" onclick="myFunc()" value="Submit" />
+      <p id="demo">Click the button to submit.</p>
+      <button onclick="showPosition,getLocation">submit location</button>
+    </form>
+  </body>
+</html>
+<script>
+  var x = document.getElementById("demo");
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+
+  function myFunc() {
+    alert("Successfully Submited");
+  }
+
+  function showPosition(position) {
+    x.innerHTML =
+      "Latitude: " +
+      position.coords.latitude +
+      "<br>Longitude: " +
+      position.coords.longitude;
+  }
+</script>
